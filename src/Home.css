@@ -1,0 +1,152 @@
+/* Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    -webkit-tap-highlight-color: transparent; /* يمنع الوميض الأزرق عند اللمس */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* يمنع السكرول العشوائي خارج التطبيق */
+    background-color: #000; /* خلفية سوداء فخمة */
+}
+
+.app-frame {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d1117;
+    position: relative;
+    overflow: hidden;
+}
+
+/* الهيدر العلوي - مثل الصورة التي تريدها */
+.app-header {
+    height: 65px;
+    background: #161b22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid #30363d;
+}
+
+.balance-box {
+    background: #000;
+    border: 1px solid #30363d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.balance-amount {
+    color: #4ade80;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.plus-btn {
+    background: #30363d;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.brand-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* محتوى التطبيق - الجزء القابل للتمرير */
+.app-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    padding-bottom: 100px; /* مساحة للقائمة السفلية */
+}
+
+/* شبكة الأقسام التسعة */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.category-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1; /* يجعل الكرت مربعاً تماماً مهما كان حجم الشاشة */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.category-card:active {
+    transform: scale(0.9);
+    background: #21262d;
+}
+
+.cat-icon { font-size: 30px; margin-bottom: 8px; }
+.cat-label { color: #c9d1d9; font-size: 11px; font-weight: 600; }
+
+/* القائمة السفلية العائمة (تطبيق حقيقي) */
+.app-bottom-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    height: 65px;
+    background: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #30363d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.nav-tab {
+    color: #8b949e;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-tab.active {
+    color: #58a6ff;
+}
+
+.center-tab {
+    background: #58a6ff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    margin-top: -40px;
+    border: 5px solid #0d1117;
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+}
